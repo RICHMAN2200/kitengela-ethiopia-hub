@@ -91,7 +91,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/images/logo.png" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
+        
         <meta name="theme-color" content="#FDF9ED" />
 
         <script
