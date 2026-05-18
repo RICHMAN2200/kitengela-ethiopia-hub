@@ -3,15 +3,18 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
   title: {
     default: 'Kitengela Injera Hub | Fresh Ethiopian Injera & Products Delivery',
     template: '%s | Kitengela Injera Hub',
   },
-  description: 'Fresh homemade Ethiopian injera, berbere spice, Ethiopian coffee, and shiro delivered in Kitengela and Athi River. Order before 5PM for same-day delivery. 3+ years trusted.',
+
+  description:
+    'Fresh homemade Ethiopian injera, berbere spice, Ethiopian coffee, and shiro delivered in Kitengela and Athi River. Order before 5PM for same-day delivery. 3+ years trusted.',
+
   keywords: [
     'injera Kitengela',
     'Ethiopian food Kitengela',
@@ -24,31 +27,44 @@ export const metadata: Metadata = {
     'teff injera',
     'Ethiopian catering Kenya',
   ],
+
   authors: [{ name: 'Kitengela Injera Hub' }],
   creator: 'Kitengela Injera Hub',
   publisher: 'Kitengela Injera Hub',
+
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://kitengela-injera-hub.vercel.app'),
+
+  // ✅ FIXED DOMAIN HERE
+  metadataBase: new URL('https://kitengelainjerahub.co.ke'),
+
   alternates: {
-    canonical: '/',
+    canonical: 'https://kitengelainjerahub.co.ke',
   },
+
   openGraph: {
     title: 'Kitengela Injera Hub | Fresh Ethiopian Injera Delivery',
-    description: 'Fresh homemade Ethiopian injera and premium traditional products delivered in Kitengela and Athi River. Order before 5PM for same-day delivery.',
-    url: 'https://kitengela-injera-hub.vercel.app',
+    description:
+      'Fresh homemade Ethiopian injera and premium traditional products delivered in Kitengela and Athi River. Order before 5PM for same-day delivery.',
+
+    // ✅ FIXED DOMAIN HERE
+    url: 'https://kitengelainjerahub.co.ke',
+
     siteName: 'Kitengela Injera Hub',
     locale: 'en_KE',
     type: 'website',
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'Kitengela Injera Hub | Fresh Ethiopian Injera Delivery',
-    description: 'Fresh homemade Ethiopian injera and premium traditional products delivered in Kitengela and Athi River.',
+    description:
+      'Fresh homemade Ethiopian injera and premium traditional products delivered in Kitengela and Athi River.',
   },
+
   robots: {
     index: true,
     follow: true,
@@ -60,6 +76,8 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
+  // ⚠️ Optional: remove if you're not using this anymore
   verification: {
     google: 'google-site-verification-code',
   },
@@ -67,14 +85,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className="bg-background">
       <head>
         <link rel="icon" href="/images/logo.png" />
         <meta name="theme-color" content="#FDF9ED" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -83,30 +102,30 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "Kitengela Injera Hub",
               "image": "/images/logo.png",
-              "description": "Fresh homemade Ethiopian injera and premium traditional products delivered in Kitengela and Athi River.",
+              "description":
+                "Fresh homemade Ethiopian injera and premium traditional products delivered in Kitengela and Athi River.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Chuna Estate, New Valley",
                 "addressLocality": "Kitengela",
-                "addressCountry": "KE"
+                "addressCountry": "KE",
               },
               "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": -1.4694,
-                "longitude": 36.9611
+                "longitude": 36.9611,
               },
               "telephone": "+254719377666",
               "openingHours": "Mo-Su 07:00-20:00",
               "priceRange": "$$",
               "servesCuisine": "Ethiopian",
               "areaServed": ["Kitengela", "Athi River"],
-              "sameAs": [
-                "https://wa.me/254719377666"
-              ]
+              "sameAs": ["https://wa.me/254719377666"],
             }),
           }}
         />
       </head>
+
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
