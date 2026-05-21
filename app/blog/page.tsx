@@ -92,16 +92,39 @@ const blogPosts = [
     author: "Kitengela Injera Hub",
     featured: false,
   },
+  {
+  slug: "sudanese-food-kitengela",
+  title: "Sudanese Food in Kitengela: Where to Find Familiar East African Flavors",
+  excerpt:
+    "Looking for Sudanese food or flavors that remind you of home in Kitengela? Explore East African dishes, spices and authentic injera experiences loved across the region.",
+  category: "Local Guide",
+  readTime: "6 min read",
+  date: "December 1, 2024",
+  author: "Kitengela Injera Hub",
+  featured: false,
+  },
+
+  {
+  slug: "sudanese-and-ethiopian-food-culture",
+  title: "Sudanese & Ethiopian Food: Similar Traditions, Shared Flavors",
+  excerpt:
+    "Discover the connection between Sudanese and Ethiopian cuisine—from communal dining and coffee culture to rich spices, stews and foods that bring families together.",
+  category: "Culture",
+  readTime: "7 min read",
+  date: "November 28, 2024",
+  author: "Kitengela Injera Hub",
+  featured: false,
+  },
 ]
 
 const categories = [
   { name: "All", count: blogPosts.length },
   { name: "Ethiopian Cuisine", count: 1 },
   { name: "Recipes", count: 2 },
-  { name: "Culture", count: 2 },
+  { name: "Culture", count: 3 },
   { name: "Ingredients", count: 1 },
   { name: "Health", count: 1 },
-  { name: "Local Guide", count: 1 },
+  { name: "Local Guide", count: 2 },
 ]
 
 export default function BlogPage() {
