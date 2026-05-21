@@ -92,6 +92,19 @@ export default function RootLayout({
     <html lang="en" className="bg-background">
       <head>
           <link rel="apple-touch-icon" href="/images/logo.png" />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFYB9XEJPR" />
+
+          <script
+            dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VFYB9XEJPR');
+            `,
+          }}
+          />
         
         <meta name="theme-color" content="#FDF9ED" />
 
